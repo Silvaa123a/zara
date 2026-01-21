@@ -10,10 +10,11 @@
 
     <div >
     <h2 style="display:flex;align-items:center;gap:150px"  class="actions" >ZARA COLNE
-
-        <a href="https://www.zara.com/sa/" style="color: black;  text-decoration: none; " target="_blank">االنساء</a>
-        <a href="https://www.zara.com/sa/" style="color: black;  text-decoration: none" target="_blank">الرجال</a>
-        <a href="https://www.zara.com/sa/" style="color: black; text-decoration: none" target="_blank">الأطفال</a>
+<div id="paypal-button-container"></div>
+        <a href="women.html">االنساء</a>
+        <a href="men.html">الرجال</a>
+        <a href="children">الأطفال</a>
+</div>
  
     <input   class="search" placeholder="ابحث عن منتج..." >
         <a class="btn" style="color: beige; background-color: black; text-decoration: none;  "
@@ -40,8 +41,7 @@
     </h2>
 </div>
 <p>اكتشف تشكيلتنا الجديدة — تصاميم أنيقة وبسيطة تناسب كل الأوقات.</p>
-<a href="https://www.zara.com/sa/" class="cta" style="color: beige; background-color: black; text-decoration: none;" target="_blank"> تسوق الان</a>
-</div>
+<div id="paypal-button-container">shoping now</div>
 <br><br>
 <h2>الأكثر مبيعًا</h2>
 <div>
@@ -81,6 +81,31 @@
     <div class="cat" style="flex:1;min-width:220px">"أحببت التصاميم الجديدة، سأطلب مرة أخرى"</div>
     <div class="cat" style="flex:1;min-width:220px">"خدمة عملاء راقية"</div>
 </div>
+<div id="paypal-button-container"></div>
+
+<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+
+<script>
+    paypal.Buttons({
+        // إعداد الطلب
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: '50.00' // ضع سعر المنتج هنا
+                    }
+                }]
+            });
+        },
+        // ما يحدث بعد نجاح الدفع
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                alert('تمت عملية الدفع بنجاح بواسطة ' + details.payer.name.given_name);
+                // هنا يمكنك توجيه المستخدم لصفحة "شكراً لك"
+            });
+        }
+    }).render('#paypal-button-container');
+</script>
 
 </body>
 </html>
