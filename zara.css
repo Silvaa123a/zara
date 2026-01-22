@@ -1,0 +1,68 @@
+.product-container {
+    display: flex;
+    /* هذا الأمر يضعهم بجانب بعض */
+    flex-wrap: wrap;
+    /* هذا الأمر يسمح بنزول الصور للسطر التالي إذا ضاقت الشاشة */
+    justify-content: center;
+    /* لتوسيط الصور */
+    gap: 20px;
+    /* مسافة بين الصور */
+}
+
+.product-card img {
+    width: 300px;
+    /* حجم الصورة على الكمبيوتر */
+    height: auto;
+}
+@media (max-width: 600px) {
+    .product-card {
+        width: 100%;
+        /* يجعل المجلد يملأ عرض الشاشة بالكامل */
+    }
+
+    .product-card img {
+        width: 100%;
+        /* تجعل الصورة تمتد لتملأ عرض هاتف المستخدم */
+        height: auto;
+    }
+
+    h4,
+    p {
+        font-size: 18px;
+        /* تكبير الخط ليكون واضحاً على الهاتف */
+        padding: 10px;
+        text-align: center;
+    }
+}
+/* تنسيق عام لكل الشاشات */
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+    /* يمنع ظهور شريط تمرير عرضي مزعج */
+}
+
+/* التنسيق الخاص بالهاتف فقط */
+@media (max-width: 600px) {
+    .actions {
+        display: flex;
+        flex-direction: column;
+        /* يجعل الأزرار فوق بعضها في الجوال */
+        width: 100%;
+        gap: 10px;
+    }
+
+    img {
+        width: 100% !important;
+        /* تجعل الصور تملأ عرض الشاشة تماماً */
+        height: auto;
+    }
+
+    h4,
+    p {
+        font-size: 5vw;
+        /* حجم خط يتغير حسب حجم الشاشة */
+        text-align: center;
+    }
+}
