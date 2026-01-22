@@ -66,3 +66,108 @@ body {
         text-align: center;
     }
 }
+/* تنسيق القسمين الجانبيين */
+.zara-info-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    /* لإعطاء مظهر متصل وفخم */
+    direction: rtl;
+    margin: 40px 0;
+    border-top: 1px solid #000;
+    border-bottom: 1px solid #000;
+}
+
+.zara-card {
+    flex: 1;
+    min-width: 300px;
+    padding: 40px 20px;
+    text-align: center;
+    border-left: 1px solid #eee;
+}
+
+.zara-card:last-child {
+    border-left: none;
+}
+
+.zara-card h3 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+/* تنسيق نموذج الطلب */
+.zara-order-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    direction: rtl;
+    font-family: 'Arial', sans-serif;
+}
+
+.zara-title {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.zara-subtitle {
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.zara-order-container input,
+.zara-order-container select {
+    width: 100%;
+    padding: 12px 0;
+    border: none;
+    border-bottom: 1px solid #000;
+    /* خط سفلي فقط كستايل زارا */
+    outline: none;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.zara-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: 1px solid #000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+}
+
+.zara-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+/* استجابة الموبايل */
+@media (max-width: 768px) {
+    .zara-card {
+        border-left: none;
+        border-bottom: 1px solid #eee;
+    }
+}

@@ -91,25 +91,67 @@
     <p>"خدمة عملاء راقية"</p>
     </section>
 </div>
-<div id="paypal-button-container"></div>
+<div class="zara-info-section">
+    <div class="zara-card">
+        <h3>لماذا نحن؟</h3>
+        <p>ننفرد بتقديم أحدث تصاميم زارا العالمية بجودة أصلية وتوصيل آمن لجميع المناطق.</p>
+    </div>
 
-<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+    <div class="zara-card">
+        <h3>آراء العملاء</h3>
+        <p>"الجودة فاقت توقعاتي، والتعامل راقي جداً. شكراً لكم!" - سارة من دمشق.</p>
+    </div>
+</div>
+
+<div class="zara-order-container">
+    <h2 class="zara-title">إتمام الطلب</h2>
+    <p class="zara-subtitle">سيتم التواصل معك عبر واتساب لتأكيد الحجز والدفع</p>
+
+    <form id="zaraOrderForm">
+        <div class="input-group">
+            <label>الاسم الكامل</label>
+            <input type="text" id="name" placeholder="أدخل اسمك هنا" required>
+        </div>
+
+        <div class="input-group">
+            <label>العنوان التفصيلي</label>
+            <input type="text" id="address" placeholder="المحافظة - المنطقة - الشارع" required>
+        </div>
+
+        <div class="input-group">
+            <label>المنتج المطلوب</label>
+            <select id="product">
+                <option value="فستان زارا أسود">فستان زارا كلاسيك - الأسود</option>
+                <option value="قميص أبيض">قميص قطن أبيض</option>
+                <option value="حقيبة يد">حقيبة يد جلدية</option>
+            </select>
+        </div>
+
+        <button type="button" class="zara-btn" onclick="sendToWhatsApp()">إرسال الطلب الآن</button>
+    </form>
+</div>
+
 <script>
-    paypal.Buttons({
-        createOrder: function (data, actions) {
-            return actions.order.create({
-                purchase_units: [{
-                    amount: { value: '50.00' } // يمكنك تغيير السعر هنا
-                }]
-            });
-        },
-        onApprove: function (data, actions) {
-            return actions.order.capture().then(function (details) {
-                alert('تمت عملية الدفع بنجاح! شكراً ' + details.payer.name.given_name);
-            });
+    function sendToWhatsApp() {
+        const myNumber = "963938242061"; // ضع رقمك السوري هنا
+        const name = document.getElementById('name').value;
+        const address = document.getElementById('address').value;
+        const product = document.getElementById('product').value;
+
+        if (name == "" || address == "") {
+            alert("يرجى إدخال كافة البيانات لإتمام الطلب");
+            return;
         }
-    }).render('#paypal-button-container'); // هذا السطر يربط الكود بـ id="paypal-button-container"
+
+        const message = طلب جديد من متجر زارا 🖤% 0A % 0A +
+                    * الاسم:* ${ name }% 0A +
+                    * العنوان:* ${ address }% 0A +
+                    * المنتج:* ${ product };
+
+        window.open(https://wa.me/${myNumber}?text=${message}, '_blank');
+}
 </script>
+
 
 </body>
 </html>
