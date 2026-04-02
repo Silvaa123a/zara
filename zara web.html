@@ -5,16 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="c:\Users\silva\Downloads\Zara Branding.jfif" type="image/x-icon" rel="icon">
 
-    <title>zara</title>
+    <title>zara web</title>
 
 
-    <div >
-    <h2 style="display:flex;align-items:center;gap:150px"  class="actions" >ZARA COLNE
-<div id="paypal-button-container"></div>
-        <a href="women.html">االنساء</a>
-        <a href="men.html">الرجال</a>
-        <a href="children">الأطفال</a>
-</div>
+  
  
     <input   class="search" placeholder="ابحث عن منتج..." >
         <a class="btn" style="color: beige; background-color: black; text-decoration: none;  "
@@ -23,7 +17,13 @@
         
     
 </h2>
-
+<div>
+    <h2 style="display:flex;align-items:center;gap:150px" class="actions">ZARA COLNE
+        <div id="paypal-button-container"></div>
+        <a href="https://www.zara.com/" target="_blank">Woman</a>
+        <a href="https://www.zara.com/" target="_blank">Man</a>
+        <a href="https://www.zara.com/" target="_blank">children</a>
+</div>
 </div>
 <link rel="stylesheet" href="zara.css">
 </head>
@@ -50,7 +50,7 @@
 <h3 style="display:flex;align-items:center;gap:330px" class="actions">
 
     <div class="prouduct-container">
-    <div class="prouduct-card">
+    <div  id="paypal-button-container">
         <img src="zara d.jpg"  alt="فساتين">
        <p>فساتين عصرية</p>
     </div>
@@ -168,6 +168,52 @@
         }
     }).render('#paypal-button-container'); // هذا السطر يربط الكود بـ id="paypal-button-container"
 </script>
+<script src="https://cdn.tailwindcss.com"></script>
+
+<div class="flex flex-col items-center justify-center h-screen bg-gray-100">
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-80 text-center">
+        <h2 class="text-xl font-bold mb-4 text-gray-800">سيريتيل كاش</h2>
+        <p class="text-gray-500 mb-6 text-sm">أدخل المبلغ لإتمام العملية</p>
+
+        <input id="amountInput" type="number" placeholder="0.00"
+            class="w-full p-3 border-2 border-gray-200 rounded-lg mb-4 focus:border-red-500 outline-none transition-all">
+
+        <button id="payButton" onclick="handlePayment()"
+            class="w-full bg-red-600 text-white py-3 rounded-lg font-semibold hover:bg-red-700 transition-all active:scale-95">
+            ادفع الآن
+        </button>
+
+        <div id="successMessage" class="hidden mt-4 p-3 bg-green-100 text-green-700 rounded-lg text-sm animate-bounce">
+            ✅ تمت عملية الدفع بنجاح!
+        </div>
+    </div>
+</div>
+
+<script>
+    // هذه هي لغة JavaScript "المنطق"
+    function handlePayment() {
+        const btn = document.getElementById('payButton');
+        const input = document.getElementById('amountInput');
+        const success = document.getElementById('successMessage');
+
+        // 1. التأكد من أن المستخدم أدخل مبلغاً
+        if (input.value === "" || input.value <= 0) {
+            alert("يرجى إدخال مبلغ صحيح يا بطل! 😉");
+            return;
+        }
+
+        // 2. تغيير شكل الزر (UI Change)
+        btn.innerText = "جاري الاتصال بـ API...";
+        btn.disabled = true;
+        btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+        // 3. محاكاة رد الـ API (بعد ثانيتين)
+        setTimeout(() => {
+            btn.classList.add('hidden'); // إخفاء الزر
+            success.classList.remove('hidden'); // إظهار رسالة النجاح
+        }, 2000);
+    }
+</script>33
 
 </body>
 </html>
