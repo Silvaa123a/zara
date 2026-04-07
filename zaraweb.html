@@ -5,24 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="c:\Users\silva\Downloads\Zara Branding.jfif" type="image/x-icon" rel="icon">
 
-    <title>zara web</title>
-
-
-  
- 
+    <title>zaraweb</title>
     <input   class="search" placeholder="ابحث عن منتج..." >
         <a class="btn" style="color: beige; background-color: black; text-decoration: none;  "
-            target="_blank" href="login.html">
-     تسجيل الدخول</a>
+            target="_blank" href="login.html"> تسجيل الدخول</a>
         
     
 </h2>
 <div>
     <h2 style="display:flex;align-items:center;gap:150px" class="actions">ZARA COLNE
         <div id="paypal-button-container"></div>
-        <a href="https://www.zara.com/" target="_blank">Woman</a>
-        <a href="https://www.zara.com/" target="_blank">Man</a>
-        <a href="https://www.zara.com/" target="_blank">children</a>
+        <a href="https://www.zara.com/ww/en/Woman-l1000.html" target="_blank">Woman</a>
+        <a href="https://www.zara.com//ww/en/man-l734.html" target="_blank">Man</a>
+        <a href="https://www.zara.com/ww/en/kids-l455.html" target="_blank">kids</a>
 </div>
 </div>
 <link rel="stylesheet" href="zara.css">
@@ -30,9 +25,8 @@
 <body >
 
 <h4>
- ZARA تعد واحدة من ابرز علامات الازياء العالمية ; 
-      و هي جزء من مجموعة Inditwx الاسبانية ;
- يقدم الموقع الرسمي لZARA تجربة تسوق عصرية تجمع بين البساطة و الاناقة;
+ZARA تعد واحدة من ابرز علامات الازياء العالمية ;  و هي جزء من مجموعة Inditwx الاسبانية ;
+يقدم الموقع الرسمي لZARA تجربة تسوق عصرية تجمع بين البساطة و الاناقة;
     حيث عرض احدث مجموعات الموضة للنساء و الرجال والاطفال.مع تحديثات مستمرة تواكب احدث الاتجاهات العالمية .
 </h4>
 
@@ -52,7 +46,7 @@
     <div class="prouduct-container">
     <div  id="paypal-button-container">
         <img src="zara d.jpg"  alt="فساتين">
-       <p>فساتين عصرية</p>
+    <p>فساتين عصرية</p>
     </div>
     <div class="prouduct-card">
         <img src="zara sh.jpg" alt="احذية">
@@ -140,15 +134,15 @@
 
         if (name == "" || address == "") {
             alert("يرجى إدخال كافة البيانات لإتمام الطلب");
-            return;
-        }
+            return; }
 
-        const message = طلب جديد من متجر زارا 🖤% 0A % 0A +
-                    * الاسم:* ${ name }% 0A +
-                    * العنوان:* ${ address }% 0A +
-                    * المنتج:* ${ product };
-
-        window.open(https://wa.me/${myNumber}?text=${message}, '_blank');
+   const message =[
+    " زوار متجر زارا من جديد 💙"
+     ,"",
+                "الاسم:*"+name,
+                " العنوان:*"+  address ,
+                " المنتج:* " + product ,
+            ].join ( "%0A" );
 }
 </script>
 <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
