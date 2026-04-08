@@ -209,11 +209,21 @@ ZARA تعد واحدة من ابرز علامات الازياء العالمي�
     }
 </script>
 
-<div style="position: fixed; bottom: 20px; right: 20px; z-index: 1000;">
-    <iframe allow="microphone;" width="350" height="430"
-        src="https://console.dialogflow.com/api-client/demo/embedded/76d39a57-06ca-477d-8ebf-271d193e8329"
-        style="border: none; border-radius: 15px; box-shadow: 0 8px 25px rgba(0,0,0,0.2);">
-    </iframe>
-</div>
+<script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
+<df-messenger intent="WELCOME" chat-title="Zara-Assistant" agent-id="76d39a57-06ca-477d-8ebf-271d193e8329"
+    language-code="en"></df-messenger>
+
+<style>
+    df-messenger {
+        --df-messenger-button-titlebar-color: #000000;
+        --df-messenger-send-icon: #000000;
+        --df-messenger-user-message: #e0e0e0;
+        --df-messenger-font-color: #000000;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 9999;
+    }
+</style>
 </body>
 </html>
